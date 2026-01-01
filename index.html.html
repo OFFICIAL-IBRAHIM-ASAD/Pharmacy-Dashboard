@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Punjab HealthConnect - Pharmacy View</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1162d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d131b] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7ecf3] dark:border-b-slate-800 bg-white dark:bg-[#1a2634] px-4 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#0d131b] dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined !text-3xl text-primary">local_hospital</span>
+</div>
+<h2 class="text-[#0d131b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Punjab HealthConnect</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d131b] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#0d131b] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Dispense</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-[#e7ecf3] dark:bg-slate-700 text-[#0d131b] dark:text-white hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-slate-700 shadow-sm" data-alt="Portrait of a pharmacist in a professional setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA44kH6GNH1w_6S-1bOGn6f0iuMKizdXV2ccvi8xGFPr49VxjA6QEQ-VqF7Amna44ysmzyF-L1EStptlp1p5fqp37DoHCduGKlBr09pcpvTyd3CI_-wMIMkbyGABtGjyiy-pS0x6WH897ZKbObjSpEqmPoIEXlq-0ja9N7SGLp50V419sLLjxZEZj7o0roA6YpOOS19dQirwrykGMNbUiAEqwDUEW3eX3YiNQKairo5VKbs9WG6GBHaKW-MByUwLfCowSOxNu5E6rO8");'></div>
+<button class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors shadow-sm">
+<span class="truncate">Logout</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 md:px-10 lg:px-20 xl:px-40 py-8">
+<div class="mx-auto max-w-[1200px] flex flex-col gap-8">
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0d131b] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Pharmacy Portal</h1>
+<p class="text-[#4c6c9a] dark:text-slate-400 text-base font-normal leading-normal">Dispense medications by verifying patient identity.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-[#4c6c9a] dark:text-slate-400 bg-white dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            System Online
+                         </span>
+</div>
+</div>
+<!-- Search & Patient Context Section -->
+<div class="grid lg:grid-cols-3 gap-6">
+<!-- Search Card -->
+<div class="lg:col-span-2 bg-white dark:bg-[#1a2634] rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-center gap-4">
+<label class="block text-sm font-bold text-[#0d131b] dark:text-white mb-1">Patient Search</label>
+<div class="flex flex-col sm:flex-row gap-3">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#4c6c9a]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border-none rounded-lg bg-[#e7ecf3] dark:bg-slate-800 text-[#0d131b] dark:text-white placeholder-[#4c6c9a] dark:placeholder-slate-500 focus:ring-2 focus:ring-primary sm:text-base" placeholder="Enter Patient CNIC (e.g. 35202-0000000-0)" type="text" value="35202-1234567-8"/>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 min-w-[140px]">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span>Fetch</span>
+</button>
+</div>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-500">Supports barcode scanning and manual entry.</p>
+</div>
+<!-- Patient Context Card -->
+<div class="lg:col-span-1 bg-white dark:bg-[#1a2634] rounded-xl p-0 shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col">
+<div class="bg-green-50 dark:bg-green-900/20 border-b border-green-100 dark:border-green-800/30 px-4 py-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-sm">check_circle</span>
+<span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wide">Verification Successful</span>
+</div>
+<div class="p-5 flex gap-4 items-start">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex-shrink-0 bg-cover bg-center border border-slate-200 dark:border-slate-600" data-alt="Close up portrait of an elderly man with a white beard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_1fVFQBK-58hB8Z42gdbxkyLH7A6E0LTme0KZ6H0JkufTRgJ8sepiKfcCmt-a9ymoxYyD0d7O_dHbgCMcCnQOBocLYUTNLRY5BL4SfgPAyUKR2huQPZ08CZ6wYNfjF4atN0_fx_3B_51cJaGzlURWLLZqt_a_jQF4gFSXgp7VzH3PEtKVuf-l92H7CeU3kcjOA-kTgG8q6npDVPd0Csqx2-Vi2sPmKOKbuRZwfpTBQibLE_jXER6ZWZTgHVRq1xuIRKlCgIiMLmEc");'></div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white leading-tight">Muhammad Ali</h3>
+<div class="text-sm text-[#4c6c9a] dark:text-slate-400 flex flex-col gap-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined !text-[16px]">badge</span> 35202-1234567-8</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined !text-[16px]">calendar_today</span> 45 Years • Male</span>
+</div>
+</div>
+</div>
+<div class="mt-auto px-5 pb-4">
+<button class="w-full py-2 px-3 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-md text-xs font-bold text-[#0d131b] dark:text-slate-300 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined !text-[16px]">history</span> View Medical History
+                            </button>
+</div>
+</div>
+</div>
+<!-- Prescription Table Section -->
+<div class="bg-white dark:bg-[#1a2634] rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-slate-200 dark:border-slate-700 flex flex-col overflow-hidden">
+<div class="px-6 py-5 border-b border-[#e7ecf3] dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">prescriptions</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">Pending Prescriptions</h3>
+<p class="text-sm text-[#4c6c9a] dark:text-slate-400">Dr. Sarah Ahmed • General OPD • Today, 09:45 AM</p>
+</div>
+</div>
+<button class="bg-[#e7ecf3] dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-[#0d131b] dark:text-white text-sm font-bold py-2.5 px-5 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined !text-[18px]">done_all</span>
+                            Dispense All
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#f8fafc] dark:bg-slate-800 border-b border-[#e7ecf3] dark:border-slate-700">
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#4c6c9a] dark:text-slate-400 w-1/3">Medicine Name</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#4c6c9a] dark:text-slate-400">Dosage</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#4c6c9a] dark:text-slate-400">Duration</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#4c6c9a] dark:text-slate-400">Stock Status</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#4c6c9a] dark:text-slate-400 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7ecf3] dark:divide-slate-700">
+<!-- Row 1 -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400">
+<span class="material-symbols-outlined">pill</span>
+</div>
+<div>
+<p class="font-bold text-[#0d131b] dark:text-white text-sm">Panadol Extra</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Tablet • 500mg</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-sm font-medium text-[#0d131b] dark:text-slate-200">1 + 0 + 1</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">After Meal</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
+                                            5 Days
+                                        </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-sm font-medium text-[#0d131b] dark:text-slate-200">Available</span>
+</div>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400 pl-3.5">240 packs left</p>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="bg-primary hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-sm transition-colors inline-flex items-center gap-2">
+<span>Dispense</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400">
+<span class="material-symbols-outlined">medication_liquid</span>
+</div>
+<div>
+<p class="font-bold text-[#0d131b] dark:text-white text-sm">Amoxicillin Syrup</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Suspension • 125mg/5ml</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-sm font-medium text-[#0d131b] dark:text-slate-200">1 + 1 + 1</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Every 8 Hours</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
+                                            7 Days
+                                        </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5">
+<div class="size-2 rounded-full bg-yellow-500"></div>
+<span class="text-sm font-medium text-[#0d131b] dark:text-slate-200">Low Stock</span>
+</div>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400 pl-3.5">12 bottles left</p>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="bg-primary hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-sm transition-colors inline-flex items-center gap-2">
+<span>Dispense</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-primary dark:text-blue-400">
+<span class="material-symbols-outlined">vaccines</span>
+</div>
+<div>
+<p class="font-bold text-[#0d131b] dark:text-white text-sm">Insulin Glargine</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Injection • 100 IU/ml</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="text-sm font-medium text-[#0d131b] dark:text-slate-200">10 Units</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Nightly (Subcutaneous)</p>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300">
+                                            30 Days
+                                        </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-1.5">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-sm font-medium text-[#0d131b] dark:text-slate-200">Available</span>
+</div>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400 pl-3.5">500+ available</p>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="bg-primary hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-sm transition-colors inline-flex items-center gap-2">
+<span>Dispense</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-6 py-4 border-t border-[#e7ecf3] dark:border-slate-700 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
+<p class="text-sm text-[#4c6c9a] dark:text-slate-400">Showing 3 items</p>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-[#4c6c9a] dark:text-slate-400 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-[#4c6c9a] dark:text-slate-400 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
